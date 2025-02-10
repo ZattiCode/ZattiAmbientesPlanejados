@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zatti Ambientes Planejados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="ZAP.png" alt="Zatti Ambientes Planejados">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Ambientes Planejados</h2>
+    <p>Transforme seu ambiente com móveis exclusivos</p>
+    <button class="btn-primary">Conheça nossos projetos</button>
+  </section>
+
+
+  <section id="sobre" class="content-section hidden">
+    <div class="text">
+      <h3>Criando seu ambiente ideal</h3>
+      <p>A Zatti Ambientes Planejados é especializada em soluções de móveis planejados que transformam espaços em ambientes lindamente projetados. Localizada no São Braz, nossa experiente equipe colabora eficientemente com você para dar vida à sua casa ou negócio.</p>
+    </div>
+    <img src="https://via.placeholder.com/500x300" alt="Furniture">
+  </section>
+
+  <section id="produtos" class="product-carousel">
+    <h3>Nossos Projetos</h3>
+    <div class="carousel">
+      <button class="prev">&#10094;</button>
+      <div class="carousel-images">
+        <img src="casa-planejada-1.png" alt="Projeto 1">
+        <img src="casa-planejada-2.jpg" alt="Projeto 2">
+        <img src="casa-planejada-3.jpg" alt="Projeto 3">
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+
+
+
+  <section id="contato" class="contact">
+    <div class="contact-form">
+      <h3>Entre em contato</h3>
+      <form id="contactForm">
+        <label for="name">Nome *</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Número de celular *</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d450.4697558935757!2d-49.3507468!3d-25.4129084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce15585aec8fd%3A0x12555fa0b5ae795d!2sZatti%20Ambientes%20Planejados!5e0!3m2!1spt-BR!2sbr!4v1736450810105!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h3>Contato</h3>
+      <p><strong>Email:</strong> zattiambientesplanejados@gmail.com</p>
+      <h3>Local</h3>
+      <p><strong>Local:</strong> São Braz, PR BR</p>
+
+      <h3>Horários de atendimento</h3>
+      <p><span>Segunda</span> <span>09:00 – 19:00</span></p>
+      <p><span>Terça</span> <span>09:00 – 19:00</span></p>
+      <p><span>Quarta</span> <span>09:00 – 19:00</span></p>
+      <p><span>Quinta</span> <span>09:00 – 19:00</span></p>
+      <p><span>Sexta</span> <span>09:00 – 19:00</span></p>
+      <p><span>Sábado</span> <span>09:00 – 19:00</span></p>
+      <p><span>Domingo</span> <span>Fechado</span></p>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Zatti Ambientes Planejados. All rights reserved.</p>
+  </footer>
+  <button id="backToTop">▲</button>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
