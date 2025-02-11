@@ -1,42 +1,12 @@
 $(document).ready(function () {
-  $("#contactForm").on("submit", function (event) {
-    event.preventDefault();
-    alert("Thank you for reaching out! We will get back to you soon.");
-  });
-});
-
-$(document).ready(function () {
+  // 📌 Envio do formulário de contato
   $("#contactForm").on("submit", function (event) {
     event.preventDefault();
     alert("Mensagem enviada! Retornaremos em breve.");
     $(this).trigger("reset");
   });
 
-  $(".btn-primary").on("click", function () {
-    $("html, body").animate({ scrollTop: $(".content-section").offset().top }, 800);
-  });
-});
-
-$(document).ready(function () {
-  let lastScrollTop = 0;
-  const header = $("header");
-
-  $(window).on("scroll", function () {
-    let scrollTop = $(this).scrollTop();
-
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      // Rolando para baixo -> Esconde o header
-      header.css("transform", "translateY(-100%)");
-    } else {
-      // Rolando para cima -> Mostra o header
-      header.css("transform", "translateY(0)");
-    }
-
-    lastScrollTop = scrollTop;
-  });
-});
-
-$(document).ready(function () {
+  // 📌 Rolagem suave ao clicar nos links do menu
   $("nav ul li a").on("click", function (event) {
     if (this.hash !== "") {
       event.preventDefault();
@@ -44,81 +14,41 @@ $(document).ready(function () {
       
       $("html, body").animate(
         {
-          scrollTop: target.offset().top - 70, // Ajuste para não ficar atrás do header
+          scrollTop: target.offset().top - 70, // Ajusta para evitar sobreposição do header
         },
-        800
+        150
       );
     }
   });
-});
 
-$(document).ready(function () {
-  let currentIndex = 0;
-  const images = $(".carousel-images img");
-  const totalImages = images.length;
-  let interval;
-  const slideDuration = 1000; // Tempo de troca entre imagens (5 segundos)
-
-  function updateCarousel() {
-    $(".carousel-images").css("transition", "transform 0.8s ease-in-out");
-    const offset = -currentIndex * 100;
-    $(".carousel-images").css("transform", `translateX(${offset}%)`);
-  }
-
-  function nextImage() {
-    if (currentIndex < totalImages - 1) {
-      currentIndex++;
-      updateCarousel();
-    } else {
-      // Se estiver na última imagem, volta para o início suavemente
-      setTimeout(() => {
-        $(".carousel-images").css("transition", "none");
-        $(".carousel-images").css("transform", "translateX(0)");
-        currentIndex = 0;
-      }, 800);
-    }
-  }
-
-  function prevImage() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
-    } else {
-      // Se estiver na primeira imagem, vai para a última sem pular
-      setTimeout(() => {
-        $(".carousel-images").css("transition", "none");
-        currentIndex = totalImages - 1;
-        $(".carousel-images").css("transform", `translateX(-${currentIndex * 100}%)`);
-      }, 800);
-    }
-  }
-
-  function startAutoSlide() {
-    interval = setInterval(nextImage, slideDuration);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(interval);
-  }
-
-  $(".next").on("click", function () {
-    stopAutoSlide();
-    nextImage();
-    startAutoSlide();
+  // 📌 Botão "Conheça nossos projetos" leva ao carrossel
+  $("#scrollToProjects").on("click", function (event) {
+    event.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: $("#produtos").offset().top - 70, // Ajusta para header fixo
+      },
+      150
+    );
   });
 
-  $(".prev").on("click", function () {
-    stopAutoSlide();
-    prevImage();
-    startAutoSlide();
+  // 📌 Esconder ou mostrar o header ao rolar a página
+  let lastScrollTop = 0;
+  const header = $("header");
+
+  $(window).on("scroll", function () {
+    let scrollTop = $(this).scrollTop();
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      header.css("transform", "translateY(-100%)"); // Esconde o header
+    } else {
+      header.css("transform", "translateY(0)"); // Mostra o header
+    }
+
+    lastScrollTop = scrollTop;
   });
 
-  // Inicia o carrossel automaticamente
-  startAutoSlide();
-});
-
-
-$(document).ready(function () {
+  // 📌 Efeito de entrada suave ao rolar a página
   function revealOnScroll() {
     $(".hidden").each(function () {
       let elementTop = $(this).offset().top;
@@ -132,9 +62,8 @@ $(document).ready(function () {
 
   $(window).on("scroll", revealOnScroll);
   revealOnScroll();
-});
 
-$(document).ready(function () {
+  // 📌 Mostrar botão de voltar ao topo ao rolar para baixo
   $(window).on("scroll", function () {
     if ($(window).scrollTop() > 300) {
       $("#backToTop").fadeIn();
@@ -143,7 +72,59 @@ $(document).ready(function () {
     }
   });
 
+  // 📌 Função para voltar ao topo da página
   $("#backToTop").on("click", function () {
-    $("html, body").animate({ scrollTop: 0 }, 800);
+    $("html, body").animate({ scrollTop: 0 }, 10);
   });
+
+  // 📌 Carrossel de projetos
+  let currentIndex = 0;
+  const images = $(".carousel-images img");
+  const totalImages = images.length;
+  const imageWidth = $(".carousel").width(); // Captura a largura correta
+
+  function updateCarousel() {
+    const offset = -currentIndex * imageWidth;
+    $(".carousel-images").css({
+      transform: `translateX(${offset}px)`,
+      transition: "transform 0.8s ease-in-out",
+    });
+  }
+
+  function nextImage() {
+    if (currentIndex < totalImages - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // Volta para a primeira imagem
+    }
+    updateCarousel();
+  }
+
+  function prevImage() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = totalImages - 1; // Vai para a última imagem
+    }
+    updateCarousel();
+  }
+
+  let interval = setInterval(nextImage, 4000); // Troca automática a cada 4s
+
+  $(".next").on("click", function () {
+    clearInterval(interval);
+    nextImage();
+    interval = setInterval(nextImage, 4000);
+  });
+
+  $(".prev").on("click", function () {
+    clearInterval(interval);
+    prevImage();
+    interval = setInterval(nextImage, 4000);
+  });
+
+  updateCarousel(); // Garante que começa na posição correta
 });
+
+
+

@@ -1,11 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 80px;
   box-sizing: border-box;
-  background-color: #222; /* Fundo mais escuro */
-  color: #ddd; /* Texto mais claro para contraste */
+  background-color: #222;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 2%, transparent 10%);
+  background-size: 10px 10px;
+  color: #ddd;
 }
 
 header {
@@ -13,16 +18,20 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #1a1a1a;
+  background: rgba(26, 26, 26, 0.8);
   padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out; /* Suaviza a animação */
-  overflow: hidden; /* Evita elementos saindo para a direita */
+  transition: transform 0.3s ease-in-out;
 }
+
+
+h2, h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff; /* Mantém legível no fundo escuro */
+}
+
 
 /* Garante que o menu não ultrapasse os limites */
 nav ul {
@@ -56,19 +65,59 @@ nav ul li a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #333; /* Hero section em um cinza médio */
-  color: #f0f0f0; /* Texto claro */
-  height: 400px;
+  height: 650px; /* Mantém altura grande para destacar a imagem */
+  color: #f0f0f0;
+  position: relative;
+  background: url("capasite.jpeg") center/cover no-repeat;
+  border-bottom-left-radius: 20% 10%;
+  border-bottom-right-radius: 20% 10%;
+}
+
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 43, 43, 0.6); /* Mantém a cor de sobreposição */
+  border-bottom-left-radius: 20% 10%;
+  border-bottom-right-radius: 20% 10%;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+.hero h2,
+.hero p,
+.hero button {
+  position: relative;
+  z-index: 2;
 }
 
 .hero button {
-  background-color: #444; /* Botão escuro */
+  background-color: rgba(68, 68, 68, 0.6); /* Deixa o botão levemente transparente */
   color: #fff;
-  border: none;
-  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Adiciona uma borda sutil */
+  padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px); /* Efeito de desfoque */
+  transition: all 0.3s ease-in-out;
+}
+
+.hero button:hover {
+  background-color: rgba(68, 68, 68, 0.8); /* Fica um pouco menos transparente no hover */
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+section {
+  scroll-margin-top: 80px; /* Evita que o header tampe as seções */
 }
 
 .content-section {
@@ -225,27 +274,35 @@ footer {
 .logo-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 60px; /* Reduzi a altura */
+  padding: 5px 15px; /* Ajustei o espaçamento interno */
 }
 
 .logo-container img {
-  height: 60px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Reduzi o tamanho da logo */
+  max-width: 120px; /* Limita a largura */
 }
 
-/* Botão principal */
+
 .btn-primary {
-  background-color: #555;
+  background: linear-gradient(135deg, #444, #666);
   color: #fff;
   padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-  background-color: #777;
+  background: linear-gradient(135deg, #666, #888);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Melhor responsividade */
 @media (max-width: 768px) {
@@ -291,7 +348,7 @@ section {
 .carousel-images {
   display: flex;
   transition: transform 0.8s ease-in-out;
-  width: calc(100% * 4); /* Ajuste conforme o número de imagens + 1 */
+  width: 300%; /* Ajuste para o número exato de imagens */
 }
 
 .carousel-images img {
@@ -335,6 +392,7 @@ section {
   transform: translateY(0);
 }
 
+
 #backToTop {
   position: fixed;
   bottom: 20px;
@@ -351,4 +409,143 @@ section {
 
 #backToTop:hover {
   background-color: #666;
+}
+
+#depoimentos {
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.testimonial {
+  font-style: italic;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+header.shrink {
+  padding: 10px 30px;
+  background: rgba(26, 26, 26, 0.95);
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+#diferenciais {
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.feature {
+  max-width: 250px;
+  text-align: center;
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover img {
+  opacity: 0.8;
+}
+
+.contact-form input,
+.contact-form textarea {
+  transition: border 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #f0f0f0;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #444, #666);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+}
+
+.sobre-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+  background-color: #2b2b2b; /* Fundo escuro elegante */
+  color: #f0f0f0;
+  text-align: left;
+}
+
+.sobre-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.sobre-text {
+  flex: 1;
+}
+
+.sobre-text h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.sobre-imagem {
+  flex: 1;
+  text-align: center;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sobre-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

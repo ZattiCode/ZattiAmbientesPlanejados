@@ -7,7 +7,7 @@
   <title>Zatti Ambientes Planejados</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -21,28 +21,30 @@
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#produtos">Produtos</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="home" class="hero">
+  <section id="home" class="hero parallax">
     <h2>Ambientes Planejados</h2>
     <p>Transforme seu ambiente com móveis exclusivos</p>
-    <button class="btn-primary">Conheça nossos projetos</button>
+    <button class="btn-primary" id="scrollToProjects">Conheça nossos projetos</button>
   </section>
 
 
-  <section id="sobre" class="content-section hidden">
-    <div class="text">
-      <h3>Criando seu ambiente ideal</h3>
-      <p>A Zatti Ambientes Planejados é especializada em soluções de móveis planejados que transformam espaços em ambientes lindamente projetados. Localizada no São Braz, nossa experiente equipe colabora eficientemente com você para dar vida à sua casa ou negócio.</p>
+  <section id="sobre" class="sobre-section visible">
+    <div class="sobre-container">
+      <div class="sobre-text">
+        <h3>Sobre a Zatti Ambientes Planejados</h3>
+        <p>Transformamos espaços em ambientes únicos e sofisticados, com móveis planejados feitos sob medida para cada cliente. Nosso compromisso é com qualidade, inovação e satisfação.</p>
+        <p>Com uma equipe experiente e apaixonada pelo que faz, garantimos projetos personalizados que refletem a sua identidade e necessidades.</p>
+      </div>
+      <div class="sobre-imagem">
+        <img src="equipe-zatti.jpg" alt="Nossa equipe trabalhando">
+      </div>
     </div>
-    <img src="https://via.placeholder.com/500x300" alt="Furniture">
   </section>
+
 
   <section id="produtos" class="product-carousel">
     <h3>Nossos Projetos</h3>
@@ -57,7 +59,26 @@
     </div>
   </section>
 
-
+  <section id="diferenciais">
+    <h3>Por que escolher a Zatti Ambientes Planejados?</h3>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-star"></i>
+        <h4>Qualidade Premium</h4>
+        <p>Trabalhamos com os melhores materiais para garantir durabilidade.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-clock"></i>
+        <h4>Entrega no Prazo</h4>
+        <p>Compromisso com prazos para que seu projeto esteja pronto sem atrasos.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-handshake"></i>
+        <h4>Atendimento Personalizado</h4>
+        <p>Cada projeto é tratado de forma única, com atenção aos detalhes.</p>
+      </div>
+    </div>
+  </section>
 
 
   <section id="contato" class="contact">
@@ -80,11 +101,13 @@
     </div>
 
     <div class="contact-info">
+      <h3>LOCAL</h3>
+      <p>📍 São Braz, Curitiba - PR, 82300-332</p>
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d450.4697558935757!2d-49.3507468!3d-25.4129084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce15585aec8fd%3A0x12555fa0b5ae795d!2sZatti%20Ambientes%20Planejados!5e0!3m2!1spt-BR!2sbr!4v1736450810105!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <h3>Contato</h3>
-      <p><strong>Email:</strong> zattiambientesplanejados@gmail.com</p>
-      <h3>Local</h3>
-      <p><strong>Local:</strong> São Braz, PR BR</p>
+      <p><strong>✉️</strong> zattiambientesplanejados@gmail.com</p>
+      <h3>Endereço</h3>
+      <p>📌 Av. Ver. Toaldo Túlio, 2532 - sala 01</p>
 
       <h3>Horários de atendimento</h3>
       <p><span>Segunda</span> <span>09:00 – 19:00</span></p>
@@ -92,17 +115,29 @@
       <p><span>Quarta</span> <span>09:00 – 19:00</span></p>
       <p><span>Quinta</span> <span>09:00 – 19:00</span></p>
       <p><span>Sexta</span> <span>09:00 – 19:00</span></p>
-      <p><span>Sábado</span> <span>09:00 – 19:00</span></p>
+      <p><span>Sábado</span> <span>09:00 – 15:00</span></p>
       <p><span>Domingo</span> <span>Fechado</span></p>
 
     </div>
   </section>
+  <section id="depoimentos">
+    <h3>O que nossos clientes dizem</h3>
+    <div class="testimonial">
+      <p>“Ótimo atendimento e qualidade incrível!”</p>
+      <strong>- Cliente Satisfeito</strong>
+    </div>
+    <div class="testimonial">
+      <p>“O projeto ficou exatamente como imaginei, recomendo!”</p>
+      <strong>- João Silva</strong>
+    </div>
+  </section>
+
 
   <footer>
     <p>&copy; 2025 Zatti Ambientes Planejados. All rights reserved.</p>
   </footer>
   <button id="backToTop">▲</button>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 
