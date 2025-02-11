@@ -126,5 +126,26 @@ $(document).ready(function () {
   updateCarousel(); // Garante que começa na posição correta
 });
 
+$(document).ready(function () {
+  // Menu responsivo
+  $(".menu-toggle").on("click", function () {
+    $("nav ul").toggleClass("active");
+  });
 
+  // Fecha o menu ao clicar em um link
+  $("nav ul li a").on("click", function () {
+    $("nav ul").removeClass("active");
+  });
+});
 
+$(document).ready(function () {
+  // Menu responsivo
+  $(".menu-toggle").on("click", function () {
+    $("nav ul").toggleClass("active");
+  });
+
+  // Fecha o menu ao clicar em um link
+  $("nav ul li a").on("click", function () {
+    $("nav ul").removeClass("active");
+  });
+});
