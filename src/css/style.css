@@ -104,6 +104,28 @@ nav ul li a {
   background: rgba(43, 43, 43, 0.6);
 }
 
+.hero-title {
+  font-family: 'Times New Roman', Times; /* Escolha uma fonte estilosa */
+  font-size: 5rem; /* Maior destaque */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-family: 'Courier New', Courier;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
 .hero h2,
 .hero p,
 .hero button {
@@ -123,6 +145,21 @@ nav ul li a {
 
 .hero button:hover {
   background-color: rgba(68, 68, 68, 0.8);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 section {
