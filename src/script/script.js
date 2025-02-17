@@ -28,6 +28,22 @@ $(document).ready(function () {
     );
   });
 
+  $("#scrollToContacts").on("click", function (event) {
+    event.preventDefault();
+    $("html, body").animate(
+      { scrollTop: $("#contato").offset().top - 70 },
+      300
+    );
+  });
+
+  $("#scrollToReviews").on("click", function (event) {
+    event.preventDefault();
+    $("html, body").animate(
+      { scrollTop: $("#Avaliacoes").offset().top - 70 },
+      300
+    );
+  });
+
   // 📌 Mostrar ou esconder header ao rolar
   let lastScrollTop = 0;
   $(window).on("scroll", function () {
@@ -82,8 +98,8 @@ $(document).ready(function () {
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         grabCursor: true,
-        slidesPerView: 1,  // Exibe uma imagem por vez
-        spaceBetween: 20,   // Espaçamento entre as imagens
+        slidesPerView: 1,
+        spaceBetween: 20,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -93,16 +109,20 @@ $(document).ready(function () {
             clickable: true,
         },
         autoplay: {
-            delay: 4000,  // Tempo de transição automática (4 segundos)
-            disableOnInteraction: false, // Continua rodando mesmo se o usuário interagir
+            delay: 4000,
+            disableOnInteraction: false,
         },
+        on: {
+            init: function () {
+                document.querySelector(".mySwiper").style.position = "relative";
+            }
+        }
     });
 });
 });
   
 
 $(document).ready(function () {
-  // Menu responsivo
   $(".menu-toggle").on("click", function () {
     $("nav ul").toggleClass("active");
   });
@@ -110,7 +130,6 @@ $(document).ready(function () {
   // Fecha o menu ao clicar em um link
   $("nav ul li a").on("click", function () {
     $("nav ul").removeClass("active");
-    $(".menu-toggle").removeClass("active"); // Remove a classe ativa do botão
   });
 });
 
@@ -118,6 +137,8 @@ $(document).ready(function () {
 var swiper = new Swiper(".swiper", {
   loop: true,
   grabCursor: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -126,4 +147,23 @@ var swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+
+$(document).ready(function () {
+  $(".menu-toggle").on("click", function () {
+    $("nav ul").toggleClass("active");
+  });
+
+  // Fecha o menu ao clicar em um link
+  $("nav ul li a").on("click", function () {
+    $("nav ul").removeClass("active");
+  });
 });
