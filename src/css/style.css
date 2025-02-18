@@ -62,25 +62,6 @@ nav ul li a {
   font-weight: 500;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
-  .logo-container {
-    flex: none;
-  }
-
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-
 .hero {
   position: relative;
   display: flex;
@@ -145,21 +126,6 @@ nav ul li a {
 
 .hero button:hover {
   background-color: rgba(68, 68, 68, 0.8);
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
 }
 
 section {
@@ -314,37 +280,14 @@ footer {
 }
 
 
-/* Melhor responsividade */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .content-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contact {
-    flex-direction: column;
-  }
-}
-
 section {
   scroll-margin-top: 80px; /* Garante que as seções não fiquem atrás do header */
 }
 
 .product-carousel {
   text-align: center;
-  padding: 50px;
-  background-color: #2b2b2b;
+  padding: 50px 0;
+  background-color: #1a1a1a;
 }
 
 .carousel {
@@ -358,7 +301,7 @@ section {
 .carousel-images {
   display: flex;
   transition: transform 0.8s ease-in-out;
-  width: 300%; /* Ajuste para o número exato de imagens */
+  width: 100%; /* Ajuste para o número exato de imagens */
 }
 
 .carousel-images img {
@@ -454,7 +397,7 @@ header.shrink {
 #diferenciais {
   text-align: center;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(230, 230, 230, 0.05);
 }
 
 .features {
@@ -498,22 +441,14 @@ header.shrink {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< Updated upstream
-  padding: 80px 10%;
-=======
   padding: 100px 10%;
   background-color: #171717;
->>>>>>> Stashed changes
   color: #f0f0f0;
 }
 
 .sobre-container {
-<<<<<<< Updated upstream
-  display: flex;
-=======
   display: contents;
   flex-direction: row; /* Garante que a imagem fique à esquerda e o texto à direita */
->>>>>>> Stashed changes
   max-width: 1200px;
   align-items: center;
   justify-content: space-between;
@@ -521,56 +456,25 @@ header.shrink {
   gap: 50px; /* Espaçamento entre a imagem e o texto */
 }
 
-<<<<<<< Updated upstream
-/* Imagem à esquerda */
-=======
 /* Imagem à esquerda ocupando 50% */
->>>>>>> Stashed changes
 .sobre-imagem {
   font-size: 0;
   flex: 1;
-<<<<<<< Updated upstream
-  text-align: left;
-=======
   max-width: 50%;
   display: flex;
->>>>>>> Stashed changes
 }
 
 .sobre-imagem img {
   width: 100%;
-<<<<<<< Updated upstream
-  max-width: 500px;
-  border-radius: 10px;
-}
-
-/* Texto à direita */
-=======
   height: auto;
   max-width: 500px; /* Define um tamanho máximo para a imagem */
   border-radius: 30px
 }
 
 /* Texto à direita ocupando 50% */
->>>>>>> Stashed changes
 .sobre-text {
   float: right;
   flex: 1;
-<<<<<<< Updated upstream
-  text-align: left;
-}
-
-/* Responsividade */
-@media (max-width: 1024px) {
-  .sobre-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-imagem img {
-    max-width: 90%;
-  }
-=======
   max-width: 50%;
   text-align: left;
 }
@@ -605,9 +509,7 @@ header.shrink {
   display: flex;
   gap: 20px;
   margin-top: 30px;
->>>>>>> Stashed changes
 }
-
 
 .sobre-section.visible {
   opacity: 1;
@@ -626,47 +528,6 @@ header.shrink {
   right: 20px;
   top: 15px;
   z-index: 1100;
-}
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero {
-    height: auto;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  nav ul li {
-    padding: 10px 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel {
-    height: auto;
-  }
-
-  .carousel-images img {
-    width: 100%;
-    height: auto;
-  }
 }
 
 img {
@@ -754,9 +615,9 @@ img {
 
 .sobre-title2 {
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Courier New', Courier, monospace;
   color: bisque;
-  font-size: 40px;
+  font-size: 30px;
   text-transform: uppercase;
 }
 
@@ -808,94 +669,28 @@ img {
   line-height: 1.5;
   color: #e0e0e0;
   margin-bottom: 2px;
-  flex-grow: 1; 
+  flex-grow: 1; /* Para ocupar espaço e alinhar os ícones no final */
 }
 
-<<<<<<< Updated upstream
-/* Responsividade */
-@media (max-width: 1024px) {
-  .sobre-container2 {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-text2 {
-    max-width: 100%;
-    padding-right: 0;
-  }
-
-  .cards-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
-.socialContainer {
-  width: 52px;
-  height: 52px;
-  border-radius: 20%;
-  background-color: rgb(44, 44, 44);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition-duration: .3s;
-}
-/* instagram*/
-.containerOne:hover {
-  background-color: #d62976;
-  transition-duration: .3s;
-}
-
-.socialContainer:active {
-  transform: scale(0.9);
-  transition-duration: .3s;
-}
-
-.socialSvg {
-  width: 17px;
-}
-
-.socialSvg path {
-  fill: rgb(255, 255, 255);
-}
-
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 0.3s both;
-}
-
-=======
 /*linkedin / gmail */
+
 .card .socialContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 15px; 
-  margin-top: auto;
-  padding-top: 10px;
+  gap: 10px;
 }
 
-.card .socialContainer a {
-  display: flex;
-  align-items: center;
-}
-
-.card .socialContainer img {
-  width: 32px; 
-  height: 32px;
+.socialContainer img {
+  width: 30px;
+  height: 30px;
   transition: transform 0.3s ease-in-out;
 }
 
-.card .socialContainer img:hover {
+.socialContainer img:hover {
   transform: scale(1.2);
 }
 
->>>>>>> Stashed changes
+
 @keyframes slide-in-top {
   0% {
     transform: translateY(-50px);
@@ -906,4 +701,39 @@ img {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* Ajuste do Swiper */
+.swiper {
+  width: 100%;
+  height: 85vh;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  visibility: visible; /* Garante que o Swiper sempre apareça */
+  opacity: 1;
+}
+
+/* Ajuste dos slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Garante que as imagens fiquem grandes e não sumam */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher sem distorcer */
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Remove qualquer animação de fade indesejada */
+.swiper-slide:not(.swiper-slide-active) img {
+  opacity: 1;
 }

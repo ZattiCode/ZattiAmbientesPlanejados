@@ -77,54 +77,6 @@ $(document).ready(function () {
   $("#backToTop").on("click", function () {
     $("html, body").animate({ scrollTop: 0 }, 10);
   });
-
-  // 📌 Carrossel de projetos
-  let currentIndex = 0;
-  const images = $(".carousel-images img");
-  const totalImages = images.length;
-  const imageWidth = $(".carousel").width(); // Captura a largura correta
-
-  function updateCarousel() {
-    const offset = -currentIndex * imageWidth;
-    $(".carousel-images").css({
-      transform: `translateX(${offset}px)`,
-      transition: "transform 0.8s ease-in-out",
-    });
-  }
-
-  function nextImage() {
-    if (currentIndex < totalImages - 1) {
-      currentIndex++;
-    } else {
-      currentIndex = 0; // Volta para a primeira imagem
-    }
-    updateCarousel();
-  }
-
-  function prevImage() {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = totalImages - 1; // Vai para a última imagem
-    }
-    updateCarousel();
-  }
-
-  let interval = setInterval(nextImage, 4000); // Troca automática a cada 4s
-
-  $(".next").on("click", function () {
-    clearInterval(interval);
-    nextImage();
-    interval = setInterval(nextImage, 4000);
-  });
-
-  $(".prev").on("click", function () {
-    clearInterval(interval);
-    prevImage();
-    interval = setInterval(nextImage, 4000);
-  });
-
-  updateCarousel(); // Garante que começa na posição correta
 });
 
 $(document).ready(function () {
@@ -141,15 +93,24 @@ $(document).ready(function () {
 });
 
 // 📌 Inicializa o Swiper
-var swiper = new Swiper(".swiper", {
-  loop: true,
-  grabCursor: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    grabCursor: true,
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    }
+  });
 });
