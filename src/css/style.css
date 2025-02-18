@@ -615,9 +615,15 @@ img {
 
 .sobre-title2 {
   text-align: center;
+<<<<<<< Updated upstream
   font-family: 'Courier New', Courier, monospace;
   color: bisque;
   font-size: 30px;
+=======
+  font-family: 'Merriweather', serif;
+  color: bisque;
+  font-size: 40px;
+>>>>>>> Stashed changes
   text-transform: uppercase;
 }
 
@@ -669,6 +675,7 @@ img {
   line-height: 1.5;
   color: #e0e0e0;
   margin-bottom: 2px;
+<<<<<<< Updated upstream
   flex-grow: 1; /* Para ocupar espaço e alinhar os ícones no final */
 }
 
@@ -687,9 +694,35 @@ img {
 }
 
 .socialContainer img:hover {
-  transform: scale(1.2);
+=======
+  flex-grow: 1; 
 }
 
+/*linkedin / gmail */
+.card .socialContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.card .socialContainer a {
+  display: flex;
+  align-items: center;
+}
+
+.card .socialContainer img {
+  width: 32px; 
+  height: 32px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card .socialContainer img:hover {
+>>>>>>> Stashed changes
+  transform: scale(1.2);
+}
 
 @keyframes slide-in-top {
   0% {
